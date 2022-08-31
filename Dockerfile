@@ -16,4 +16,4 @@ COPY . /app
 
 ENV PYTHONBUFFERED=1
 
-CMD ["uvicorn", "--port=8080", "--host=0.0.0.0", "--proxy-headers", "--forwarded-allow-ips=*", "--timeout-keep-alive=20", "ws_repro.main:app"]
+CMD python /app/ws_repro/main.py

@@ -1,0 +1,17 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: ws-test
+  namespace: project-mappings
+spec:
+  allow_upgrade:
+  - websocket
+  bypass_auth: true
+  host: ws-test2.dbtn.app
+  precedence: 10000
+  host_rewrite: ws-repro-gvjcjtpafa-ew.a.run.app
+  prefix: /
+  service: https://ws-repro-gvjcjtpafa-ew.a.run.app
+  timeout_ms: 20000
+  add_request_headers:
+    origin: https://ws-repro-gvjcjtpafa-ew.a.run.app
